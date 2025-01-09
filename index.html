@@ -8,8 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .grid-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-
+        .grid-container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,55 +26,158 @@
         <div class="container-fluid">
             <a class="navbar-brand"><i class="fa fa-instagram"></i> Instagram</a>
             <form class="d-flex">
-                <!-- Boton del modal -->
-                <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                <!-- Modal Button -->
+                <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Create a new post
                 </button>
-                <!-- Example single danger button -->
+                <!-- Dropdown Button -->
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <i class="fa fa-gear"></i>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
                     </ul>
                 </div>
             </form>
         </div>
     </nav>
-    <!-- MODAL -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Caption:
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here"
-                            id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Comments</label>
-                    </div>
-                    <button type="button" class="btn btn-light"><i class="fa fa-camera"></i></button>
-                    <button type="button" class="btn btn-light"><i class="fa fa-map-pin"></i></button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Publish</button>
-                </div>
+
+    <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+            <i class="fa fa-th"></i>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+            <i class="fa fa-square"></i>
+          </button>
+        </li>
+        
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <!-- Image Grid -->
+    <div class="container grid-container">
+        <div id="image-container" class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+                <img src="https://www.worldlifeexpectancy.com//images/a/d/d/b/dogo_argentino/dogo_argentino_1.webp"
+                    alt="Dog" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://img.freepik.com/premium-photo/group-people-are-standing-together-happily_622540-344.jpg"
+                    alt="Group of people" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP-IM0GHqx60kYNGbeuOoRr6abUlt6XRUcQw&s"
+                    alt="Coastal city" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://thumbs.dreamstime.com/b/happy-young-brunette-woman-amazing-smile-26038696.jpg"
+                    alt="Smiling woman" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/the-eiffel-tower-in-paris-royalty-free-image-1722454333.jpg?crop=0.67406xw:1xh;center,top&resize=640:*"
+                    alt="Eiffel Tower" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://cdn.britannica.com/35/238335-050-2CB2EB8A/Lionel-Messi-Argentina-Netherlands-World-Cup-Qatar-2022.jpg"
+                    alt="Football match" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://cdn.cdnparenting.com/articles/2019/05/18095611/international-family-day.webp"
+                    alt="Family" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://www.telerik.com/sfimages/default-source/blogs/windowslivewriter-visualstudiotipcreatingyourowncodesnippe_e893-1_thumb_2-png"
+                    alt="Code snippet" class="grid-img">
+            </div>
+            <div class="col">
+                <img src="https://www.naceweb.org/images/default-source/2024/feature/collaborating-with-faculty-for-successful-student-outcomes-institutional-effectiveness-xlarge.jpg"
+                    alt="Students" class="grid-img">
             </div>
         </div>
     </div>
+        </div>
+        <div class="tab-pane fade d-flex justify-content-center" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="">
+                <div class="card mt-2" style="width: 25rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <h4>Messi el Mejor</h4>
+                            <h5>12/12</h5>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <img src="https://cdn.britannica.com/35/238335-050-2CB2EB8A/Lionel-Messi-Argentina-Netherlands-World-Cup-Qatar-2022.jpg"
+                        alt="Football match" class="card-img-top">
+                      </li>
+                      <li class="list-group-item">
+                        <div class="card-body">
+                            <h5 class="card-text"><i class="fa fa-heart"></i> 35546 Likes</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card mt-2" style="width: 25rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <h4>Mi codigo</h4>
+                            <h5>23/12</h5>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <img src="https://www.telerik.com/sfimages/default-source/blogs/windowslivewriter-visualstudiotipcreatingyourowncodesnippe_e893-1_thumb_2-png"
+                        alt="Football match" class="card-img-top">
+                      </li>
+                      <li class="list-group-item">
+                        <div class="card-body">
+                            <h5 class="card-text"><i class="fa fa-heart"></i> 35546 Likes</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card mt-2" style="width: 25rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <h4>Mi familia</h4>
+                            <h5>27/12</h5>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/05/18095611/international-family-day.webp"
+                        alt="Football match" class="card-img-top">
+                      </li>
+                      <li class="list-group-item">
+                        <div class="card-body">
+                            <h5 class="card-text"><i class="fa fa-heart"></i> 35546 Likes</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+       
+      </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
